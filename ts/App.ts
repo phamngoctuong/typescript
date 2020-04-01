@@ -1,3 +1,4 @@
 import {ManageProduct} from 'ts/ManageProduct';
 var productrelated = new ManageProduct();
-console.log(productrelated);
+var relatedproducts = document.getElementById('relatedproducts');
+relatedproducts.innerHTML = productrelated.getProduct();
