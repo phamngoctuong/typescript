@@ -11,7 +11,11 @@ for (let i:number = 0; i < length; ++i) {
 	buynows[i].addEventListener("click", function(){
 		let id:number = this.getAttribute('data-idsp');
 		let buyproduct:Product = productrelated.getProductById(id);
-		var buyproductcart: ProductCart = new ProductCart(buyproduct,1);
-		products.addProductToCart(buyproductcart);
+		if(products.checkProduct(buyproduct) == -1) {
+			var buyproductcart: ProductCart = new ProductCart(buyproduct,1);
+			products.addProductToCart(buyproductcart);
+		}else {
+			
+		}
 	}
 }

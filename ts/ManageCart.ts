@@ -5,4 +5,14 @@ export class ManageCart {
 		this._productcarts.push(product);
 		console.log(this._productcarts);
 	}
+	checkProduct(product: Product):number {
+		let length = this._productcarts.length;
+		let products = this._productcarts;
+		for (var i:number = 0; i < length; ++i) {
+			if(products[i].getProduct().id == product.id) {
+				return i;
+			}
+		}
+		return -1;
+	}
 }

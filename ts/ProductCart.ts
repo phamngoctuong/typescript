@@ -6,4 +6,7 @@ export class ProductCart {
 		this._product = product;
 		this._count = count;
 	}
+	getProduct(): Product {
+		return this._product;
+	}
 }
