@@ -5,6 +5,7 @@ var productrelated = new ManageProduct();
 var products = new ManageCart();
 var relatedproducts = document.getElementById('relatedproducts');
 var productspurchased = document.getElementById('productspurchased');
+var countcart = document.getElementById('countcart');
 relatedproducts.innerHTML = productrelated.getProduct();
 var buynows = document.querySelectorAll('.buynow');
 var length = buynows.length;
@@ -19,5 +20,6 @@ for (let i:number = 0; i < length; ++i) {
 			products.increaseProduct(buyproduct);
 		}
 		productspurchased.innerHTML = products.showCart();
+		countcart.innerHTML = '( ' + products.countProduct() + ' sản phẩm)';
 	}
 }

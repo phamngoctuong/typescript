@@ -52,4 +52,13 @@ export class ManageCart {
 		}
 		return html;
 	}
+	countProduct():number {
+		let count: number = 0;
+		let length = this._productcarts.length;
+		let products = this._productcarts;
+		for (let i:number = 0; i < length; ++i) {
+			count += products[i].getAmount();
+		}
+		return count;
+	}
 }
