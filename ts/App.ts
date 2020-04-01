@@ -36,6 +36,15 @@ for (let i:number = 0; i < length; ++i) {
 				provisionalprice.innerHTML = products.intoMoney() + " đ";
 				intomoney.innerHTML = products.intoMoney() + " đ";
 			}
+		};
+		let deleteproduct = document.getElementsByClassName('deleteproduct');
+		let lengt = deleteproduct.length;
+		for (let i:number = 0; i < lengt; ++i) {
+			deleteproduct[i].addEventListener("click",function(){
+				let idproduct:number = this.getAttribute('data-idproduct');
+				idproduct = parseInt(idproduct);
+				products.deleteProduct(idproduct);
+			}
 		}
 	}
 }

@@ -12,10 +12,41 @@ class ManageProduct {
         this.addProductToCart(product2);
         this.addProductToCart(product3);
         this.addProductToCart(product4);
-        console.log(this._products);
     }
     addProductToCart(product) {
         this._products.push(product);
+    }
+    getProduct() {
+        let products = this._products;
+        let length = products.length;
+        var html = "";
+        for (let i = 0; i < length; ++i) {
+            html += `
+				<div class="col-md-3">
+          <div class="card mb-4 shadow-sm">
+            <img src="./images/${products[i].image}" alt="${products[i].image}">
+            <div class="card-body">
+              <p class="text-danger text-center">${products[i].price}</p>
+              <p class="text-success text-center">${products[i].name}</p>
+              <p class="card-text">${products[i].description}</p>
+              <div class="d-flex justify-content-center align-items-center">              
+                <button type="button" class=" btn btn-primary btn-sm buynow" data-idsp="${products[i].id}">Mua hàng</button>
+              </div>
+            </div>
+          </div>
+        </div>
+			`;
+        }
+        return html;
+    }
+    getProductById(id) {
+        let products = this._products;
+        let length = products.length;
+        for (let i = 0; i <= length; ++i) {
+            if (i == (id - 1)) {
+                return products[i];
+            }
+        }
     }
 }
 exports.ManageProduct = ManageProduct;

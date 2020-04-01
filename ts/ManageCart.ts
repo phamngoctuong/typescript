@@ -45,7 +45,7 @@ export class ManageCart {
 						</div>
 					</div>
 					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mt-5">
-						<button type="button" class="btn btn-danger">DELETE</button>
+						<button type="button" class="btn btn-danger deleteproduct" data-idproduct="${products[i].getProduct().id}">DELETE</button>
 					</div>
 				</div>
 			`;
@@ -81,5 +81,18 @@ export class ManageCart {
 			intomoney += price * count;
 		}
 		return intomoney;
+	}
+	deleteProduct(ind:number):void {
+		let products:ProductCart[] = this._productcarts;
+		let length:number = this._productcarts.length;
+		document.querySelectorAll('button[data-idproduct="'+ind+'"]')[0].parentElement.parentElement.style.display = 'none';
+		for (let i:number = 0; i < length; ++i) {
+			let idproduct: number = products[i].getProduct().id;
+			if(idproduct == ind) {
+				products.splice(i, 1);
+				console.log(products);
+				return false;
+			}
+		}
 	}
 }
