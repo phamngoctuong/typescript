@@ -37,4 +37,13 @@ export class ManageProduct {
 		}
 		return html;
 	}
+	getProductById(id: number): Product {
+		let products: Product[] = this._products;
+		let length = products.length;
+		for (let i:number = 0; i <= length; ++i) {
+			if(i == (id - 1)) {
+				return products[i];
+			}
+		}
+	}
 }

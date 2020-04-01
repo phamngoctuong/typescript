@@ -7,6 +7,7 @@ var length = buynows.length;
 for (let i:number = 0; i < length; ++i) {
 	buynows[i].addEventListener("click", function(){
 		let id:number = this.getAttribute('data-idsp');
-		console.log(id);
+		let buyproduct:Product = productrelated.getProductById(id);
+		console.log(buyproduct);
 	}
 }
