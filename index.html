@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/system.js"></script>
+  <script>
+    System.transpiler = 'typescript';
+    System.meta['typescript'] = {
+      format: 'global',
+      exports: 'ts'
+    };
+    System.paths = {
+      '*': '*.ts',
+      'typescript': 'js/typescript.js'
+    }
+    System.import('ts/app');
+  </script>
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+					<img src="./images/header.png" alt="Header">
+			</div>
+		</div>
+	</header>
+	<main class="py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="alert alert-primary" role="alert">Đã được thêm vào giỏ hàng thành công</div>
+				</div>
+				<div class="col-md-12">
+					<div class="jumbotron-fluid bg-light">
+					  <div class="container">
+					    <p class="lead py-2">Giỏ hàng <span id="spansoluong" class="text-danger">( 2 sản phẩm)</span></p>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" id="cacsanphamdamua"> 
+			<div class="row">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+					<div class="row">
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<img src="./images/1.jpg" alt="1.jpg">
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<a class="d-inline-block mb-2 text-success">sp1</a>
+							<p>The getElementById() method returns the element that has the ID</p>
+						</div>
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mt-2">
+							<p class="text-danger">2000 đ</p>
+							<input type="number" class="form-control soluongsp" data-idsanpham="1" min="1" value="1">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mt-5">
+					<button type="button" class="btn btn-danger">DELETE</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+					<div class="row">
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<img src="./images/2.jpg" alt="2.jpg">
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<a class="d-inline-block mb-2 text-success">sp2</a>
+							<p>This method is one of the most common methods in the HTML DOM</p>
+						</div>
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mt-2">
+							<p class="text-danger">4000 đ</p>
+							<input type="number" class="form-control soluongsp" data-idsanpham="2" min="1" value="1">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mt-5">
+					<button type="button" class="btn btn-danger">DELETE</button>
+				</div>
+			</div></div>
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<ul class="list-group list-group-flush border">
+							  <li class="list-group-item"><span>Tạm tính:</span><span id="giatamtinh">6000 đ</span></li>
+							  <li class="list-group-item"><span>Tổng giá:</span><span id="thanhtien">6000 đ</span><p class="text-warning mb-0">(Đã bao gồm VAT)</p></li>
+							</ul>
+							<button type="button" class="btn btn-danger btn-lg btn-block mt-4">Đặt hàng</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="jumbotron-fluid bg-light">
+					  <div class="container">
+					    <p class="lead py-2">Sản phẩm khác</p>
+					  </div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		      <div class="row" id="relatedproducts">
+          <div class="col-md-3">
+            <div class="card mb-4 shadow-sm">
+              <img src="./images/1.jpg" alt="1.jpg">
+              <div class="card-body">
+                <p class="text-danger text-center">2000</p>
+                <p class="card-text">The getElementById() method returns the element that has the ID</p>
+                <div class="d-flex justify-content-center align-items-center">              
+                  <button type="button" class=" btn btn-primary btn-sm nutmuangay" data-idsp="1">Mua hàng</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-3">
+            <div class="card mb-4 shadow-sm">
+              <img src="./images/2.jpg" alt="2.jpg">
+              <div class="card-body">
+                <p class="text-danger text-center">4000</p>
+                <p class="card-text">This method is one of the most common methods in the HTML DOM</p>
+                <div class="d-flex justify-content-center align-items-center">              
+                  <button type="button" class="disabled btn btn-primary btn-sm nutmuangay" data-idsp="2">Mua hàng</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-3">
+            <div class="card mb-4 shadow-sm">
+              <img src="./images/3.jpg" alt="3.jpg">
+              <div class="card-body">
+                <p class="text-danger text-center">5000</p>
+                <p class="card-text">An ID should be unique within a page. However, if more than</p>
+                <div class="d-flex justify-content-center align-items-center">              
+                  <button type="button" class="disabled btn btn-primary btn-sm nutmuangay" data-idsp="3">Mua hàng</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-3">
+            <div class="card mb-4 shadow-sm">
+              <img src="./images/1.jpg" alt="1.jpg">
+              <div class="card-body">
+                <p class="text-danger text-center">7000</p>
+                <p class="card-text">This method is one of the most common methods in the HTML DOM</p>
+                <div class="d-flex justify-content-center align-items-center">              
+                  <button type="button" class="disabled btn btn-primary btn-sm nutmuangay" data-idsp="4">Mua hàng</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="border-top">
+		<div class="container-fluid">
+			<div class="row">
+					<img src="./images/footer.png" alt="Footer">
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
