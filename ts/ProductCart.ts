@@ -9,4 +9,10 @@ export class ProductCart {
 	getProduct(): Product {
 		return this._product;
 	}
+	changeAmount(count: number): void {
+		this._count = count;
+	}
+	getAmount(): number {
+		return this._count;
+	}
 }
