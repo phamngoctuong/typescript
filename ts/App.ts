@@ -21,5 +21,21 @@ for (let i:number = 0; i < length; ++i) {
 		}
 		productspurchased.innerHTML = products.showCart();
 		countcart.innerHTML = '( ' + products.countProduct() + ' sản phẩm)';
+		provisionalprice.innerHTML = products.intoMoney() + " đ";
+		intomoney.innerHTML = products.intoMoney() + " đ";
+		let countproducts = document.getElementsByClassName('countproduct');
+		let leng = countproducts.length;
+		for (let i:number = 0; i < leng; ++i) {
+			countproducts[i].addEventListener('change',function(){
+				let idproduct:number = this.getAttribute('data-idproduct');
+				idproduct = parseInt(idproduct);
+				let producted:Product = productrelated.getProductById(idproduct);
+				let amountupdate = parseInt(this.value);
+				products.updateProduct(producted, amountupdate);
+				countcart.innerHTML = '( ' + products.countProduct() + ' sản phẩm)';
+				provisionalprice.innerHTML = products.intoMoney() + " đ";
+				intomoney.innerHTML = products.intoMoney() + " đ";
+			}
+		}
 	}
 }

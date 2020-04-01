@@ -61,4 +61,25 @@ export class ManageCart {
 		}
 		return count;
 	}
+	updateProduct(product:Product, count:number):void {
+		let length = this._productcarts.length;
+		let products = this._productcarts;
+		for (let i:number = 0; i < length; ++i) {
+			let idproduct: number = products[i].getProduct().id;
+			if(idproduct == product.id) {
+				products[i].changeAmount(count);
+			}
+		}
+	}
+	intoMoney(): number {
+		let intomoney: number = 0;
+		let length = this._productcarts.length;
+		let products = this._productcarts;
+		for (let i:number = 0; i < length; ++i) {
+			let price: number = products[i].getProduct().price;
+			let count: number = products[i].getAmount();
+			intomoney += price * count;
+		}
+		return intomoney;
+	}
 }
